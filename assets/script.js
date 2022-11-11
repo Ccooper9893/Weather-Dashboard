@@ -1,4 +1,6 @@
+var currentDate = dayjs().format('MMM D, YYYY');
 
+$('#currentTime').text(currentDate);
 
 
 
