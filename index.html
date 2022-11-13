@@ -17,30 +17,34 @@
         <h4 id="currentTime"></h4>
       </header>
 
-    <div class="container-fluid">
 
-      <div class="row">
-        <div class="col-3 d-flex flex-column" id="searchContainer"> <!--Search container-->
+
+    
+      <div class="row justify-content-center" id="topSection">
+        <div class="col-lg-3 col-sm-8 d-flex flex-column" id="searchContainer"> <!--Search container-->
           <h3 class="text-center">Search for a City</h3>
-          <input type="text" id="searchBarInput"> <!--Search Input-->
+          <input type="text" id="searchBarInput" class="text-center"> <!--Search Input-->
           <button id="searchBtn" class="text-bg-light">Search</button> <!--Search Button-->
           <!--Search History-->
           <!--Search History-->
           <!--Search History-->
         </div>
 
-        <div class="col-8 text-center" id="currentWeatherContainer"> <!--Current Weather Container-->
+        <div class="col-lg-4 col-sm-8 text-center d-flex flex-column justify-content-center"> <!--Current Weather Container-->
           <h6 class="text-center" id="forecastTitle">Current Forecast</h6>
           <div id="currentWeatherContainer" class="weatherBox">
-          <h5 id="cityName">Atlanta</h5><!--Current City-->
-          <p id="currentTemp">56F</p> <!--Current Temperature-->
-          <p id="currentWind">15MPH</p> <!--Current Wind Speed-->
-          <p id="Humidity">44%</p> <!--Current Humidity-->
+            <h5 id="cityName">City Name</h5><!--Current City-->
+            <image id="day0"></image>
+            <p id="currentTemp">Current Temperature</p> <!--Current Temperature-->
+            <p id="currentWind">Current Wind</p> <!--Current Wind Speed-->
+            <p id="Humidity">Current Humidity</p> <!--Current Humidity-->
+          </div>
         </div>
+      </div> 
+    
 
         <h6 class="text-center" id="forecastTitle">5-Day Forecast</h6>
-
-          <div class="container d-flex flex-row justify-content-between mt-2" id="forecastContainer">
+          <div class="container d-flex justify-content-center mt-2 mb-5 forecastContainer">
             <div class='weatherBox text-center' id="day1">
               <h4 id="date">9/14/2022</h4>
               <image id="icon">Icon</image>
@@ -76,16 +80,10 @@
               <p id="wind">Wind</p>
               <p id="humidity">Humidity</p>
             </div>
-        </div>
-      </div>
-
-    </div>
+          </div>
 
 
 
-
-
-    </div>
 
 
     </body>
