@@ -22,7 +22,6 @@ body {
 }
 
 #currentWeatherContainer {
-    margin-top: 2rem;
 }
 
 #forecastTitle {
@@ -30,12 +29,17 @@ body {
     font-size: 2rem;
     margin-bottom: 1rem;
     border-bottom: 0.1rem solid white;
+    color:coral;
 }
 
 .weatherBox {
-    padding: 1rem;
+    padding: 1.5rem;
     background-color: white;
     color: black;
     border: 0.1rem solid black;
     border-radius: 0.4rem;
+}
+
+@media screen {
+    
 }
