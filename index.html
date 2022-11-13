@@ -8,6 +8,20 @@
     <link rel="reset" href="assets/CSS/reset.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/CSS/style.css"/>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.min.js"
+    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+    crossorigin="anonymous"></script> <!--JQUERY-->
+
+    <script
+    src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+    integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
+    crossorigin="anonymous"></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"></script> <!--DAYJS-->
     <title>5-day Weather Forecast</title>
   </head>
 
@@ -17,11 +31,9 @@
         <h1 id="title">Weather Dashboard</h1>
       </header>
 
-
-
-    
+      <!--Searchbox container-->
       <div class="row justify-content-center" id="topSection">
-        <div class="col-lg-3 col-sm-8 d-flex flex-column" id="searchContainer"> <!--Search container-->
+        <div class="col-lg-3 col-sm-4 d-flex flex-column" id="searchContainer"> <!--Search container-->
           <h3 class="text-center">Search for a City</h3>
           <input type="text" id="searchBarInput" class="text-center"> <!--Search Input-->
           <button id="searchBtn" class="text-bg-light">Search</button> <!--Search Button-->
@@ -30,8 +42,9 @@
           <!--Search History-->
         </div>
 
+        <!--Current Weather container-->
         <div class="col-lg-4 col-sm-8 text-center d-flex flex-column justify-content-center"> <!--Current Weather Container-->
-          <h6 class="text-center" id="forecastTitle">Current Forecast</h6>
+          <h6 class="text-center" id="forecastTitle">Current Weather</h6>
           <div id="currentWeatherContainer" class="weatherBox">
             <h4 id="currentTime"></h4> <!--Current date-->
             <h5 id="cityName"></h5><!--Current City-->
@@ -95,28 +108,6 @@
             </div>
           </div>
 
-
-
-
-
-    </body>
-
-
-    <script
-    src="https://code.jquery.com/jquery-3.6.1.min.js"
-    integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
-    crossorigin="anonymous"></script> <!--JQUERY-->
-
-    <!-- <script
-    src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
-    integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0="
-    crossorigin="anonymous"></script> JQUERY UI -->
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
-      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
-      crossorigin="anonymous"></script> <!--DAYJS-->
-
+        </body>
     <script src="assets/Javascript/script.js"></script>
-
 </html>

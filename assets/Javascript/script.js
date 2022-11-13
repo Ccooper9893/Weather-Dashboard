@@ -1,3 +1,19 @@
+
+/* Steps to code */
+//Grab city name from user search
+//Insert city name into geoUrl api
+//Grab latitude and longitude from geoUrl
+//Insert latitude and longtude into requestUrl
+//Grab weather information from requestUrl
+//Insert weather information into html document
+
+/* Weather API DOCS */
+//Weather API Doc: https://openweathermap.org/forecast5
+//Weather API key: 2e4652b7589b2f1ce92a963bd9db3bfa
+//5-day Weather Forecast URL: api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
+//Direct Geocoding: http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
+//Use Direct Geocoding to grab latitude and longitude to plug into 5-day Weather-forcast request.
+
 //Query Selectors for forecast dates
 var day1 = document.querySelector('#day1');
 var day2 = document.querySelector('#day2');
@@ -57,6 +73,10 @@ var humArr = [hum1, hum2, hum3, hum4, hum5];
 
 //Random Variables
 var timeArr = [3, 11, 19, 27, 35]; //3pms for each day in weather forecast Api data
+var searchContainer = document.querySelector('#searchContainer');
+var historyArr = [];
+var searchInput = document.querySelector('#searchBarInput')
+var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
 
 //Collects current date
 var currentDate = dayjs().format('dddd MMM D, YYYY');
@@ -70,24 +90,44 @@ for (i=1; i<6; i++) {
     
 }
 
+//Checks localStorage for recent searches
+// function init() {
+//     var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
+//     if (searchHistoryArr !== null) {
+//         for (i=0; i<searchHistoryArr.length; i++) {
+//             var crtBtn = document.createElement('button');
+//             crtBtn.innerHTML = searchHistoryArr[i];
+//             searchContainer.appendChild(crtBtn);
+
+//         };
+//     };
+// };
+
 //Grabs input from user and fetches data from OpenWeather
 function getInput() {
-
     var userInput = $('#searchBarInput').val();
-    var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&units=imperial&appid=2e4652b7589b2f1ce92a963bd9db3bfa`
     var apikey = '2e4652b7589b2f1ce92a963bd9db3bfa';
+    var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&units=imperial&appid=${apikey}`;
 
+    if (userInput === '') {
+        window.alert('Please enter a valid city name!')
+    } else {
+        historyArr.push($('#searchBarInput').val()); //Saves city name to an array
+        localStorage.setItem('City', JSON.stringify(historyArr)); //Saves city name to localStorage
     function getApi() { //Grabs coordinates for valid city name
-        fetch(geoUrl)
+        fetch(geoUrl) //Fetches geolocation coordinates
         .then(function (response) {
             console.log(response.status);//Should return 200
             return response.json(); 
           })
             .then(function(data){ 
                 if (data.length === 0) { //Checks if user entered valid city
-                    window.alert('Please enter a valid City!'); //Alerts user to enter a valid city
-                } else {
+                    window.alert('Please enter a valid city name!'); //Alerts user to enter a valid city
+                } else { //Continues with fetch and begins weather data insertions
                 console.log(data); //Displays data in console
+                var crtBtn = document.createElement('button');
+                crtBtn.innerHTML = userInput;
+                searchContainer.appendChild(crtBtn);
 
                 var lat = data[0].lat; //Saves lattitude to variable
                 var lon = data[0].lon; //Saves longitude to variable
@@ -113,8 +153,7 @@ function getInput() {
                     .then((response) => response.json())
                     .then(function(data) {
                         console.log(data);
-                        console.log(data.list[3].main.temp)//data.list[3].weather[0].main
-                        for (i=0; i<5; i++) {
+                        for (i=0; i<5; i++) { //Inserts weather forecast values into containers
                             skyArr[i].innerHTML = data.list[timeArr[i]].weather[0].main;
                             var iconCode = data.list[timeArr[i]].weather[0].icon
                             var iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`
@@ -129,32 +168,7 @@ function getInput() {
         };
 
     getApi();
-}
+}};
 $('#searchBtn').on('click', getInput); //Event listener for City name input
 
-//Grab city name from user search
-//Insert city name into geoUrl api
-//Grab latitude and longitude from geoUrl
-//Insert latitude and longtude into requestUrl
-//Grab weather information from requestUrl
-//Insert weather information into html document
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//Weather API Doc: https://openweathermap.org/forecast5
-//Weather API key: 2e4652b7589b2f1ce92a963bd9db3bfa
-//5-day Weather Forecast URL: api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}
-//Direct Geocoding: http://api.openweathermap.org/geo/1.0/direct?q={city name},{state code},{country code}&limit={limit}&appid={API key}
-//Use Direct Geocoding to grab latitude and longitude to plug into 5-day Weather-forcast request.
+// init();
