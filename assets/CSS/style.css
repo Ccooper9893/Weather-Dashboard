@@ -2,7 +2,7 @@ body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-image: url(prism.png);
+    background-image: url(images/prism.png);
     background-repeat: repeat;
     color: white;
 }
@@ -32,7 +32,8 @@ body {
 .weatherBox {
     margin:0;
     padding: 1.5rem;
-    background-color: white;
+    background-image: url(images/ripples.png);
+    background-size: cover;
     color: black;
     border: 0.1rem solid black;
     border-radius: 0.4rem;

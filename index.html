@@ -5,16 +5,16 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="reset" href="assets/reset.css"/>
+    <link rel="reset" href="assets/CSS/reset.css"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/style.css"/>
+    <link rel="stylesheet" href="assets/CSS/style.css"/>
     <title>5-day Weather Forecast</title>
   </head>
 
-    <body class="container-fluid"> <!--Header-->
-      <header class="container-fluid text-center" id="header">
+    <body class="container-fluid"> 
+
+      <header class="container-fluid text-center" id="header"> <!--Header-->
         <h1 id="title">Weather Dashboard</h1>
-        <h4 id="currentTime"></h4>
       </header>
 
 
@@ -33,52 +33,65 @@
         <div class="col-lg-4 col-sm-8 text-center d-flex flex-column justify-content-center"> <!--Current Weather Container-->
           <h6 class="text-center" id="forecastTitle">Current Forecast</h6>
           <div id="currentWeatherContainer" class="weatherBox">
-            <h5 id="cityName">City Name</h5><!--Current City-->
-            <image id="day0"></image>
-            <p id="currentTemp">Current Temperature</p> <!--Current Temperature-->
-            <p id="currentWind">Current Wind</p> <!--Current Wind Speed-->
-            <p id="Humidity">Current Humidity</p> <!--Current Humidity-->
+            <h4 id="currentTime"></h4> <!--Current date-->
+            <h5 id="cityName"></h5><!--Current City-->
+            <image id="iconCurrent"></image>
+            <p id="currentSky"></p> <!--Current Sky-->
+            <p id="currentTemp"></p> <!--Current Temperature-->
+            <p id="currentWind"></p> <!--Current Wind Speed-->
+            <p id="currentHumidity"></p> <!--Current Humidity-->
+          
           </div>
         </div>
       </div> 
     
-
+      <!--5-day forecast containers-->
         <h6 class="text-center" id="forecastTitle">5-Day Forecast</h6>
           <div class="container d-flex justify-content-center mt-2 mb-5 forecastContainer">
-            <div class='weatherBox text-center' id="day1">
-              <h4 id="date">9/14/2022</h4>
-              <image id="icon">Icon</image>
-              <p id="temperature">Temperature</p>
-              <p id="wind">Wind</p>
-              <p id="humidity">Humidity</p>
+
+            <div class='weatherBox text-center'>
+              <h4 id="day1"></h4>
+              <p id="day1Sky"></p>
+              <image id="icon1"></image>
+              <p id="temperature1"></p>
+              <p id="wind1"></p>
+              <p id="humidity1"></p>
             </div>
-            <div class='weatherBox text-center' id="day2">
-              <h4 id="date">9/14/2022</h4>
-              <image id="icon">Icon</image>
-              <p id="temperature">Temperature</p>
-              <p id="wind">Wind</p>
-              <p id="humidity">Humidity</p>
+
+            <div class='weatherBox text-center'>
+              <h4 id="day2"></h4>
+              <p id="day2Sky"></p>
+              <image id="icon2"></image>
+              <p id="temperature2"></p>
+              <p id="wind2"></p>
+              <p id="humidity2"></p>
             </div>
-            <div class='weatherBox text-center' id="day3">
-              <h4 id="date">9/14/2022</h4>
-              <image id="icon">Icon</image>
-              <p id="temperature">Temperature</p>
-              <p id="wind">Wind</p>
-              <p id="humidity">Humidity</p>
+
+            <div class='weatherBox text-center'>
+              <h4 id="day3"></h4>
+              <p id="day3Sky"></p>
+              <image id="icon3"></image>
+              <p id="temperature3"></p>
+              <p id="wind3"></p>
+              <p id="humidity3"></p>
             </div>
-            <div class='weatherBox text-center' id="day4">
-              <h4 id="date">9/14/2022</h4>
-              <image id="icon">Icon</image>
-              <p id="temperature">Temperature</p>
-              <p id="wind">Wind</p>
-              <p id="humidity">Humidity</p>
+
+            <div class='weatherBox text-center'>
+              <h4 id="day4"></h4>
+              <p id="day4Sky"></p>
+              <image id="icon4"></image>
+              <p id="temperature4"></p>
+              <p id="wind4"></p>
+              <p id="humidity4"></p>
             </div>
-            <div class='weatherBox text-center' id="day5">
-              <h4 id="date">9/14/2022</h4>
-              <image id="icon">Icon</image>
-              <p id="temperature">Temperature</p>
-              <p id="wind">Wind</p>
-              <p id="humidity">Humidity</p>
+
+            <div class='weatherBox text-center'>
+              <h4 id="day5"></h4>
+              <p id="day5Sky"></p>
+              <image id="icon5"></image>
+              <p id="temperature5"></p>
+              <p id="wind5"></p>
+              <p id="humidity5"></p>
             </div>
           </div>
 
@@ -104,6 +117,6 @@
       integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
       crossorigin="anonymous"></script> <!--DAYJS-->
 
-    <script src="./assets/script.js"></script>
+    <script src="assets/Javascript/script.js"></script>
 
 </html>
