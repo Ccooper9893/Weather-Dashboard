@@ -1,0 +1,41 @@
+body {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    background-image: url(prism.png);
+    background-repeat: repeat;
+    color: white;
+}
+
+#title {
+    border-bottom: 0.1rem solid white !important;
+}
+
+#searchBtn {
+    margin-top: 1rem;
+    height: 2rem;
+    border-bottom: 0.1rem solid black;
+}
+
+#searchContainer {
+    margin-top: 2rem;
+}
+
+#currentWeatherContainer {
+    margin-top: 2rem;
+}
+
+#forecastTitle {
+    margin-top: 2rem;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 0.1rem solid white;
+}
+
+.weatherBox {
+    padding: 1rem;
+    background-color: white;
+    color: black;
+    border: 0.1rem solid black;
+    border-radius: 0.4rem;
+}
