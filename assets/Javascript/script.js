@@ -105,7 +105,7 @@ var currentDate = dayjs().format('dddd MMM D, YYYY');
 
 //Grabs input from user and fetches data from OpenWeather
 function getInput() {
-    var userInput = $('#searchBarInput').val();
+    // var userInput = $('#searchBarInput').val();
     var apikey = '2e4652b7589b2f1ce92a963bd9db3bfa';
     var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&units=imperial&appid=${apikey}`;
 
@@ -127,7 +127,7 @@ function getInput() {
                 console.log(data); //Displays data in console
                 var crtBtn = document.createElement('button');
                 crtBtn.innerHTML = userInput;
-                searchContainer.appendChild(crtBtn);
+                searchContainer.appendChild(crtBtn); //Creates new button
 
                 var lat = data[0].lat; //Saves lattitude to variable
                 var lon = data[0].lon; //Saves longitude to variable
@@ -176,6 +176,15 @@ function getInput() {
 
     getApi();
 }};
-$('#searchBtn').on('click', getInput); //Event listener for City name input
 
-// init();
+//Adds an event listener for all buttons including future buttons made.
+document.addEventListener('click', function(event) {
+    if (event.target.matches('#searchBtn')) {
+        userInput = $('#searchBarInput').val();
+        getInput();
+    } else if (event.target.matches("button")) {
+        userInput = event.target.innerHTML;
+        console.log('its working!!!');
+        getInput();
+    }
+});
