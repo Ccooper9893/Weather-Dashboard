@@ -154,7 +154,7 @@ function getInput() {
                             windArr[i].innerHTML = `Wind: ${data.list[timeArr[i]].wind.speed} MPH`;
                             humArr[i].innerHTML = `Humidity: ${data.list[timeArr[i]].main.humidity}%`;
                         }
-                        
+                        $('.hide').removeClass('hide');
                         if (historyArr.indexOf(userInput) !== -1) { //Checks if userInput is in history Array
                             return;
                         } else { //If userInput is not in history Arr it will make a new button and save to localStorage

@@ -24,10 +24,6 @@ button {
     color:white;
 }
 
-#title {
-    border-bottom: 0.1rem solid black !important;
-}
-
 #history {
     font-size: 1.5rem;
 }
@@ -45,10 +41,6 @@ button {
     color: black;
     box-shadow: 0.1rem 0.1rem 0.1rem black;
 }
-#topSection {
-    margin-left:3rem;
-    margin-top: 2rem;
-}
 
 #searchBarInput {
     text-decoration: none;
@@ -58,7 +50,11 @@ button {
 }
 
 #searchContainer {
-    margin-top: 10rem;
+    margin-top:5rem;
+}
+
+.hide {
+    display: none !important;
 }
 
 #forecastTitle {
@@ -66,7 +62,9 @@ button {
     font-size: 2rem;
     margin-bottom: 1rem;
 }
-
+.currentCon {
+    display: none !important;
+}
 .weatherBox {
     margin: 1%;
     padding: 4rem 1rem 4rem 1rem;
