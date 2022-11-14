@@ -80,15 +80,15 @@ var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
 
 //Collects current date
 var currentDate = dayjs().format('dddd MMM D, YYYY');
-$('#currentTime').text(currentDate);
+
 
 //Fills dates for weather containers
-var datesArr = [];
-for (i=1; i<6; i++) {
-    datesArr.push(dayjs().add(i, 'day').format('MM/D/YYYY'));
-    daysArr[i-1].innerHTML = datesArr[i-1];
+// var datesArr = [];
+// for (i=1; i<6; i++) {
+//     datesArr.push(dayjs().add(i, 'day').format('MM/D/YYYY'));
+//     daysArr[i-1].innerHTML = datesArr[i-1];
     
-}
+// }
 
 //Checks localStorage for recent searches
 // function init() {
@@ -152,6 +152,13 @@ function getInput() {
                 fetch(requestUrl) //Fetches the future 5 day-forecast/3 hour periods 
                     .then((response) => response.json())
                     .then(function(data) {
+                        //Fills dates for weather containers
+                        var datesArr = [];
+                        for (i=1; i<6; i++) {
+                            datesArr.push(dayjs().add(i, 'day').format('MM/D/YYYY'));
+                            daysArr[i-1].innerHTML = datesArr[i-1];
+                        }
+                        $('#currentTime').text(currentDate);
                         console.log(data);
                         for (i=0; i<5; i++) { //Inserts weather forecast values into containers
                             skyArr[i].innerHTML = data.list[timeArr[i]].weather[0].main;

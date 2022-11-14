@@ -1,14 +1,19 @@
+* {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Quicksand', sans-serif;
+}
+
 body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-image: url(images/8847b045-cb2c-4b7d-8af8-8d0963dd4d25.avif);
+    background-image: url(images/landscape-690345_1280.jpg);
     background-size: cover;
     color: black;
 }
 
 #title {
-    border-bottom: 0.1rem solid white !important;
+    border-bottom: 0.1rem solid black !important;
 }
 
 button {
@@ -16,15 +21,33 @@ button {
 }
 
 #searchBtn {
+    text-decoration: none;
     height: 2rem;
     width:50%;
     margin: 0 auto;
+    border: none;
     border-radius: 0.4rem;
     margin-bottom: 2rem;
 }
 
-#searchContainer {
+#searchBtn:hover {
+    color: black;
+    box-shadow: 0.1rem 0.1rem 0.1rem black;
+}
+#topSection {
+    margin-left:3rem;
     margin-top: 2rem;
+}
+
+#searchBarInput {
+    text-decoration: none;
+    background-color: rgba(0,0,0,.7);
+    margin-bottom: 1rem;
+    color: white;
+}
+
+#searchContainer {
+    margin-top: 10rem;
 }
 
 #forecastTitle {
@@ -36,9 +59,10 @@ button {
 .weatherBox {
     margin: 1%;
     padding: 4rem 1rem 4rem 1rem;
-    background-color: rgba(100,100,100,.5);
+    background-color: rgba(0,0,0,.7);
+    box-shadow: 0.5rem 0.5rem 0.5rem black;
     background-size: cover;
-    color: black;
+    color: whitesmoke;
 };
 
 @media screen and (max-width: 1000px) {
