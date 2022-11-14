@@ -2,7 +2,7 @@ body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-image: url(images/clouds.jpg);
+    background-image: url(images/8847b045-cb2c-4b7d-8af8-8d0963dd4d25.avif);
     background-size: cover;
     color: black;
 }
@@ -11,16 +11,16 @@ body {
     border-bottom: 0.1rem solid white !important;
 }
 
+button {
+    border-radius: 0.4rem;
+}
+
 #searchBtn {
     height: 2rem;
     width:50%;
     margin: 0 auto;
-    border-radius: 2rem;
+    border-radius: 0.4rem;
     margin-bottom: 2rem;
-}
-
-.historyBtn {
-    width: 50%;
 }
 
 #searchContainer {
@@ -31,17 +31,14 @@ body {
     margin-top: 2rem;
     font-size: 2rem;
     margin-bottom: 1rem;
-    border-bottom: 0.1rem solid white;
 }
 
 .weatherBox {
-    margin:0;
-    padding: 1.5rem;
-    background-image: url(images/ripples.png);
+    margin: 1%;
+    padding: 4rem 1rem 4rem 1rem;
+    background-color: rgba(100,100,100,.5);
     background-size: cover;
     color: black;
-    border: 0.1rem solid black;
-    border-radius: 0.4rem;
 };
 
 @media screen and (max-width: 1000px) {
