@@ -81,53 +81,40 @@ var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
 //Collects current date
 var currentDate = dayjs().format('dddd MMM D, YYYY');
 
+// Checks localStorage for recent searches and appends buttons
+function init() {
+    var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
+    if (searchHistoryArr !== null) {
+        for (i=0; i<searchHistoryArr.length; i++) {
+            var crtBtn = document.createElement('button');
+            crtBtn.innerHTML = searchHistoryArr[i];
+            searchContainer.appendChild(crtBtn);
+            historyArr.push(searchHistoryArr[i]);
 
-//Fills dates for weather containers
-// var datesArr = [];
-// for (i=1; i<6; i++) {
-//     datesArr.push(dayjs().add(i, 'day').format('MM/D/YYYY'));
-//     daysArr[i-1].innerHTML = datesArr[i-1];
-    
-// }
+        };
+    };
+};
 
-//Checks localStorage for recent searches
-// function init() {
-//     var searchHistoryArr = JSON.parse(localStorage.getItem('City'));
-//     if (searchHistoryArr !== null) {
-//         for (i=0; i<searchHistoryArr.length; i++) {
-//             var crtBtn = document.createElement('button');
-//             crtBtn.innerHTML = searchHistoryArr[i];
-//             searchContainer.appendChild(crtBtn);
-
-//         };
-//     };
-// };
+init();
 
 //Grabs input from user and fetches data from OpenWeather
 function getInput() {
-    // var userInput = $('#searchBarInput').val();
     var apikey = '2e4652b7589b2f1ce92a963bd9db3bfa';
     var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${userInput}&units=imperial&appid=${apikey}`;
 
     if (userInput === '') {
-        window.alert('Please enter a valid city name!')
+        window.alert('Please enter a valid city name!') //TODO: Change to fancy alert
     } else {
-        historyArr.push($('#searchBarInput').val()); //Saves city name to an array
-        localStorage.setItem('City', JSON.stringify(historyArr)); //Saves city name to localStorage
+        
     function getApi() { //Grabs coordinates for valid city name
         fetch(geoUrl) //Fetches geolocation coordinates
         .then(function (response) {
-            console.log(response.status);//Should return 200
             return response.json(); 
           })
             .then(function(data){ 
                 if (data.length === 0) { //Checks if user entered valid city
                     window.alert('Please enter a valid city name!'); //Alerts user to enter a valid city
                 } else { //Continues with fetch and begins weather data insertions
-                console.log(data); //Displays data in console
-                var crtBtn = document.createElement('button');
-                crtBtn.innerHTML = userInput;
-                searchContainer.appendChild(crtBtn); //Creates new button
 
                 var lat = data[0].lat; //Saves lattitude to variable
                 var lon = data[0].lon; //Saves longitude to variable
@@ -139,7 +126,6 @@ function getInput() {
                 fetch(currentWeather) //Fetches current Weather forecast 
                     .then((response) => response.json())
                     .then(function(data) { 
-                        console.log(data);
                         var iconCode = data.weather[0].icon;
                         var iconUrl = `http://openweathermap.org/img/w/${iconCode}.png`//Grabs icon via code
                         cityName.innerHTML = data.name;
@@ -159,7 +145,6 @@ function getInput() {
                             daysArr[i-1].innerHTML = datesArr[i-1];
                         }
                         $('#currentTime').text(currentDate);
-                        console.log(data);
                         for (i=0; i<5; i++) { //Inserts weather forecast values into containers
                             skyArr[i].innerHTML = data.list[timeArr[i]].weather[0].main;
                             var iconCode = data.list[timeArr[i]].weather[0].icon
@@ -168,6 +153,16 @@ function getInput() {
                             tempArr[i].innerHTML = `Temp: ${data.list[timeArr[i]].main.temp}&#8457`;
                             windArr[i].innerHTML = `Wind: ${data.list[timeArr[i]].wind.speed} MPH`;
                             humArr[i].innerHTML = `Humidity: ${data.list[timeArr[i]].main.humidity}%`;
+                        }
+                        
+                        if (historyArr.indexOf(userInput) !== -1) { //Checks if userInput is in history Array
+                            return;
+                        } else { //If userInput is not in history Arr it will make a new button and save to localStorage
+                            var crtBtn = document.createElement('button');
+                            crtBtn.innerHTML = userInput;
+                            searchContainer.appendChild(crtBtn); //Creates new button
+                            historyArr.push(userInput);
+                            localStorage.setItem('City', JSON.stringify(historyArr)); //Saves city name to localStorage
                         }
                     })
                 }
@@ -184,7 +179,7 @@ document.addEventListener('click', function(event) {
         getInput();
     } else if (event.target.matches("button")) {
         userInput = event.target.innerHTML;
-        console.log('its working!!!');
         getInput();
     }
 });
+
