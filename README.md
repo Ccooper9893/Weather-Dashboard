@@ -32,10 +32,11 @@ Mockup Example
 <img src="assets\CSS\images\WeatherMockUp.png" alt="A mockup website provided as a guideline to functionality">
 
 Finished Website
-<img src="assets\CSS\images\FinishedWeb.png" alt="A screenshot of the finished website">
+<img src="assets\CSS\images\WeatherScreenshot.png" alt="A screenshot of the finished website">
 
 ## Credit
 - Bootstrap
 - JQuery
 - DayJS
 - Google Fonts
+- OpenWeather API

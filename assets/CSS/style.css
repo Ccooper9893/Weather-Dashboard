@@ -7,50 +7,101 @@ body {
     margin:0;
     padding:0;
     box-sizing: border-box;
-    background-image: url(images/clouds.jpg);
+    background-image: url(images/Clouds.webp);
     background-size: cover;
     color: black;
 }
 
 button {
     text-decoration: none;
-    height: 2rem;
-    width:75%;
+    height: 3rem;
+    width:85%;
     margin: 0 auto;
     border: none;
     border-radius: 0.4rem;
     margin-bottom:0.2rem;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(255,255,255,0.1);
+    color:rgba(255,255,255,1) !important;
+    box-shadow: 0.3rem 0.3rem 1rem black;
+    margin-bottom: 1rem !important;
+    transition: 0.8s;
+}
+
+button:hover {
+    box-shadow: 0.1rem 0.1rem 0.7rem black;
+    width: 75%;
+    border: 0.1rem solid black;
+    font-size: 75%;
+}
+
+#sTitle {
+    padding-top: 0.5rem;
     color:white;
+
+}
+
+#title {
+    margin-top: 2rem;
+    font-size: 3rem;
+    border-bottom: 0.1rem solid black;
+    z-index: 1;
+}
+
+.sun {
+    color: white;
 }
 
 #history {
     font-size: 1.5rem;
+    color:white;
+    border-top: 0.1rem solid white;
+    border-radius: 0.3rem;
+    margin-top: 2rem;
+    
 }
 #searchBtn {
     text-decoration: none;
-    height: 2rem;
-    width:50%;
+    height: 3rem;
+    width:99%;
     margin: 0 auto;
     border: none;
     border-radius: 0.4rem;
-    margin-bottom: 2rem;
+    margin-bottom: 5rem;
+    background-color: rgba(255,255,255,0.1) !important;
+    color:rgba(255,255,255,1) !important;
+    box-shadow: 0.3rem 0.3rem 1rem black;
+    margin-bottom: 1rem !important;
+    transition: 0.8s;
 }
 
 #searchBtn:hover {
-    color: black;
     box-shadow: 0.1rem 0.1rem 0.1rem black;
+    font-size: 0.8rem;
+    width:80%;
+    border: 0.1rem solid grey;
 }
 
 #searchBarInput {
+    font-weight: bold;
+    border-radius: 0.5rem;
     text-decoration: none;
-    background-color: rgba(0,0,0,.7);
+    background-color: rgba(250,250,250,0.9);
     margin-bottom: 1rem;
-    color: white;
+    color: black;
 }
 
 #searchContainer {
+    background-color: rgba(0, 0, 0, .6);
+    padding-bottom: 3rem;
+    border: 0.1rem solid black;
     margin-top:5rem;
+    margin-right: 3rem;
+    box-shadow: -5rem -5rem 9rem white;
+    /* margin-left: 25%;
+    margin-right: 25%; */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 25rem;
 }
 
 .hide {
@@ -58,9 +109,24 @@ button {
 }
 
 #forecastTitle {
+    color: black;
+    font-weight: bold;
     margin-top: 2rem;
     font-size: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+    z-index: 1;
+    border-bottom: 0.1rem solid black;
+    border-radius: 1rem;
+}
+
+#fiveTitle {
+    color: black !important;
+    font-weight: bold;
+    margin-top: 2rem;
+    font-size: 2rem;
+    margin-bottom:  0;
+    border-top: 0.1rem solid black;
+    border-radius: 1rem;
 }
 .currentCon {
     display: none !important;
@@ -69,27 +135,42 @@ button {
     margin: 1%;
     padding: 4rem 1rem 4rem 1rem;
     background-color: rgba(0,0,0,.7);
-    box-shadow: 0.5rem 0.5rem 0.5rem black;
+    box-shadow: 3rem 3rem 5rem black, 1rem -1rem 5rem white;
     background-size: cover;
     color: whitesmoke;
+    padding: 2rem;
+    z-index: -1;
 };
 
 @media screen and (max-width: 1000px) {
     #topSection {
         flex-direction: column !important;
-        align-content: center;
+        align-content: center !important;
         justify-content: center;
         text-align: center;
+    }
+    html {
+        margin-left: 18rem !important;
+        margin-right: 18rem !important;
+    }
+    #sTitle {
+        font-size: 75%;
     }
 }
 
 @media screen and (max-width: 800px) {
     .forecastContainer {
-        flex-direction: column;
+        flex-direction: column !important;
     }
 
     .weatherBox {
         justify-content: center;
+    }
 
+
+    #searchContainer {
+        justify-content: center;
+        width: 75%;
+        margin: 0 auto;
     }
 }
